@@ -4,7 +4,7 @@ import { Document, Page, pdfjs } from "react-pdf";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 interface PdfProps {
-  exhibit: ExhibitItem[]
+  exhibit: ExhibitItem
 }
 
 interface ExhibitItem {
@@ -15,6 +15,7 @@ interface ExhibitItem {
 
 
 const ChecklistPDF: React.FC<PdfProps> = (props) => {
+  console.log(typeof props.exhibit)
   const [numPages, setNumPages] = useState(null)
   const fileString = props.exhibit.checklistUrl;
   return(

@@ -56,6 +56,10 @@ textarea {
   margin: 12px 0 12px 0;
 }
 
+.galleryButton{
+  margin: 12px 0 12px 0;
+}
+
 .exhibitItems {
   display: inline;
   cursor: pointer;

@@ -48,6 +48,31 @@ export default {
       },
     },
     {
+      name: 'singleWorks',
+      type: 'array',
+      title: 'Single Works',
+      of: [
+        {
+          name: 'singleWork',
+          type: 'image',
+          title: 'Single Work',
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: 'alt',
+              type: 'string',
+              title: 'Alternative text',
+            },
+          ],
+        },
+      ],
+      options: {
+        layout: 'grid',
+      },
+    },
+    {
       title: 'Checklist',
       name: 'checklist',
       type: 'file',

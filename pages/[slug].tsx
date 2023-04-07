@@ -76,6 +76,21 @@ const Exhibit = ({exhibit}) => {
       </div>
           }
       </div>
+      {exhibit.singleWorks &&
+      <div id="Singles">
+              <p
+                onClick={() => handleClick("Singles")}
+                className="exhibitItems"
+              >
+                Single works
+              </p>
+              {showSingles &&
+      <div className='galleryContainer'>
+      <Gallery props={exhibit.singleWorks} />
+    </div>
+        } 
+        </div>    
+      }
       {exhibit.checklistUrl &&
       <div id="Checklist" className='pdfLinkContainer'>
         <p
