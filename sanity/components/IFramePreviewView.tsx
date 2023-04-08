@@ -1,6 +1,7 @@
+import { SanityClient } from '@sanity/client'
 import { Box, Text } from '@sanity/ui'
 import { ComponentProps, Suspense } from 'react'
-import { isRecord, isString, SanityClient, useClient } from 'sanity'
+import { isRecord, isString, useClient } from 'sanity'
 import { UserViewComponent } from 'sanity/desk'
 import styled from 'styled-components'
 import { suspend } from 'suspend-react'
