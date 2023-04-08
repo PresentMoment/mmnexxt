@@ -32,7 +32,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
-lib/.env
+.env
 
 # vercel
 .vercel
