@@ -1,6 +1,6 @@
 import { Box, Text } from '@sanity/ui'
 import { ComponentProps, Suspense } from 'react'
-import { isRecord, isString, useClient } from 'sanity'
+import { isRecord, isString, SanityClient, useClient } from 'sanity'
 import { UserViewComponent } from 'sanity/desk'
 import styled from 'styled-components'
 import { suspend } from 'suspend-react'
@@ -52,7 +52,7 @@ function PagePreviewWithSecret(props: {
 }) {
   const { id, slug, type } = props
 
-  const client = useClient({ apiVersion })
+  const client: SanityClient = useClient({ apiVersion })
 
   // Use `suspend` to fetch the secret with a TTL of 1 minute, just to check if it's necessary to
   // recreate the secret which has a TTL of 60 minutes.
