@@ -9,6 +9,7 @@ const query = (ttl: number) => groq`
 
 const tag = 'preview.secret'
 
+
 export async function getPreviewSecret(options: {
   client: SanityClient
   id: `${string}.${string}`
