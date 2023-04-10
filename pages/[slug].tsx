@@ -36,20 +36,20 @@ const Exhibit = ({exhibit}) => {
   return (
     <>
         <NextSeo
-      title={`${exhibit.name.artist}: ${exhibit.title}`}
+      title={`${exhibit?.name.artist}: ${exhibit?.title}`}
       description="MMXX"
       openGraph={{
         type: 'website',
         locale: 'en_IE',
         //url: `${process.env.BASE_URL+router.asPath}`,
-        title: `${exhibit.name.artist}: ${exhibit.title} - MMXX`,
+        title: `${exhibit?.name.artist}: ${exhibit?.title} - MMXX`,
         description: 'MMXX',
         images: [
           {
-            url: `${exhibit.imgUrl}`,
+            url: `${exhibit?.imgUrl}`,
             width: 800,
             height: 600,
-            alt: `${exhibit.name.artist}: ${exhibit.title}`,
+            alt: `${exhibit?.name.artist}: ${exhibit?.title}`,
           },
         ],
         site_name: 'MMXX',
@@ -61,7 +61,7 @@ const Exhibit = ({exhibit}) => {
     />
     <div className="content">
         <div className="exhibitTitle">
-       <p>{exhibit.name.artist}<i> {exhibit.title && exhibit.title}</i> {exhibit.dates}</p>
+       <p>{exhibit?.name.artist}<i> {exhibit?.title && exhibit?.title}</i> {exhibit?.dates}</p>
         </div>
         <div id="Exhibit" className='galleryButton'>
         <p
@@ -72,11 +72,11 @@ const Exhibit = ({exhibit}) => {
           </p>
           {showExhibit &&
       <div className='galleryContainer'>
-        <Gallery props={exhibit.images} />
+        <Gallery props={exhibit?.images} />
       </div>
           }
       </div>
-      {exhibit.singleWorks &&
+      {exhibit?.singleWorks &&
       <div id="Singles">
               <p
                 onClick={() => handleClick("Singles")}
@@ -86,12 +86,12 @@ const Exhibit = ({exhibit}) => {
               </p>
               {showSingles &&
       <div className='galleryContainer'>
-      <Gallery props={exhibit.singleWorks} />
+      <Gallery props={exhibit?.singleWorks} />
     </div>
         } 
         </div>    
       }
-      {exhibit.checklistUrl &&
+      {exhibit?.checklistUrl &&
       <div id="Checklist" className='pdfLinkContainer'>
         <p
             onClick={() => handleClick("Checklist")}
@@ -124,7 +124,7 @@ const Exhibit = ({exhibit}) => {
           ) : null}
         </div>
         
-        {exhibit.pressrelease.length > 1 &&
+        {exhibit?.pressrelease.length > 1 &&
         <div id="ItPdf" className='pdfLinkContainer'>
           <p
             onClick={() => handleClick("ItPdf")}
