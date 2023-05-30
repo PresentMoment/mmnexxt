@@ -5,14 +5,13 @@ body,
 }
 
 body {
-  -webkit-font-smoothing: antialiased;
-  margin: 0;
+  margin: 8px;
 }
 
 body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 12px;
-  /* padding-top: 6vh; */
+  padding-top: 3vh;
 }
 
 .content {
@@ -80,12 +79,13 @@ textarea {
 .embla {
   --slide-spacing: 1rem;
   --slide-size: 100%;
-  --slide-height: 19rem;
+  /* --slide-height: 19rem; */
   padding: 1.6rem;
 }
 .embla__viewport {
   height: 100%;
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   overflow: hidden;
 }
 .embla__container {

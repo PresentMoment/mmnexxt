@@ -1,6 +1,6 @@
+import { NextSeo } from "next-seo";
 import React, { useState } from "react";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
-
 function Contact() {
   const [active, setActive] = useState(false);
   const handleClick = () => {
@@ -66,6 +66,31 @@ function Contact() {
     );
   };
   return (
+    <>
+    <NextSeo
+title="MMXX - Contact"
+description="Via Donatello 35, 20131 MILANO"
+openGraph={{
+type: 'website',
+locale: 'en_IE',
+//url: `${process.env.BASE_URL+router.asPath}`,
+title: `MMXX`,
+description: 'Via Donatello 35, 20131 MILANO',
+// images: [
+//   {
+//     url: `${exhibit.imgUrl}`,
+//     width: 800,
+//     height: 600,
+//     alt: `${exhibit.name.artist}: ${exhibit.title}`,
+//   },
+// ],
+site_name: 'MMXX',
+}}
+// twitter={{
+//   site: `${process.env.BASE_URL}`,
+//   cardType: "summary_large_image",
+// }}
+/>
     <div className="content">
       <p>
         <span style={{ height: "1rem" }} />
@@ -94,6 +119,7 @@ function Contact() {
         )}
       />
     </div>
+    </>
   );
 }
 
