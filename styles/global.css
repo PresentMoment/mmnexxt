@@ -79,7 +79,7 @@ textarea {
 .embla {
   --slide-spacing: 1rem;
   --slide-size: 100%;
-  /* --slide-height: 19rem; */
+  --slide-height: 19rem;
   padding: 1.6rem;
 }
 .embla__viewport {
@@ -94,7 +94,6 @@ textarea {
   margin-left: calc(var(--slide-spacing) * -1);
 }
 .embla__slide {
-  flex: 0 0 auto;
   min-width: 100%;
   padding-left: var(--slide-spacing);
   position: relative;
