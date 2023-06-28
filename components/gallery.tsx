@@ -23,6 +23,8 @@ const Gallery = (props) => {
     return builder.image(source)}
     
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'center', containScroll: 'trimSnaps' })
+
+  console.log(props)
   
 return(
   <div className="embla">
