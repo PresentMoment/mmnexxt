@@ -24,8 +24,6 @@ const Gallery = (props) => {
     
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'center', containScroll: 'trimSnaps' })
 
-  console.log(props)
-  
 return(
   <div className="embla">
   <div className="embla__viewport" ref={emblaRef}>

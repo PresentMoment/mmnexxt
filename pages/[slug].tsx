@@ -13,6 +13,7 @@ const Exhibit = ({exhibit}) => {
   const [showEngPdf, setShowEngPdf] = useState(false)
   const [showItPdf, setShowItPdf] = useState(false)
   const [showChecklist, setShowChecklist] = useState(false)
+  console.log(exhibit)
 
   const handleClick = (x) => {
     let currentTarget = "show" + x;
