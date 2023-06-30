@@ -47,23 +47,34 @@ export default function IndexPage(props) {
       //   cardType: "summary_large_image",
       // }}
     />
-            {props.res.map((obj) => {
-              let linkName = obj.title.toLowerCase().replace(/\s+/g, '').replace(/&/g,"").slice(0, 200)
-              return(
-                <div key={obj._id} className="content">
-                <Link key={obj._id} href={linkName}>
-                  <p>{obj.name.artist}<i> {obj.title}</i> {obj.dates}</p>
-                  <div className="exhibitImg">
-                    <img 
-                    src={builder.image(obj.image).url()}
-                    alt={obj.name.artist}
-                    width="50%"
-                    />
-                  </div>
-                </Link>
-                </div>
-              )
-            })}
+            {props.res
+  .map(obj => {
+    var slicedDate = obj.dates.split(' - ')[1];
+    var dateParts = slicedDate.split('.');
+    var day = parseInt(dateParts[0], 10);
+    var month = parseInt(dateParts[1], 10) - 1;
+    var year = parseInt(dateParts[2], 10);
+    var javascriptDate = new Date(year, month, day);
+    return { obj, javascriptDate }; // Include the object and its corresponding javascriptDate in a new object
+  })
+  .sort((a, b) => b.javascriptDate - a.javascriptDate) // Sort the objects based on the javascriptDate in descending order
+  .map(({ obj }) => {
+    let linkName = obj.title.toLowerCase().replace(/\s+/g, '').replace(/&/g, '').slice(0, 200);
+    return (
+      <div key={obj._id} className="content">
+        <Link key={obj._id} href={linkName}>
+          <p>
+            {obj.name.artist}
+            <i> {obj.title}</i> {obj.dates}
+          </p>
+          <div className="exhibitImg">
+            <img src={builder.image(obj.image).url()} alt={obj.name.artist} width="80%" />
+          </div>
+        </Link>
+      </div>
+    );
+  })}
+
     </>
   )
 }
